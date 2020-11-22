@@ -1,0 +1,95 @@
+\hypertarget{event_8h}{\section{include/event.h File Reference}
+\label{event_8h}\index{include/event.\-h@{include/event.\-h}}
+}
+
+
+Simple definition of an event.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}particle.\-h\char`\"{}}\\*
+Include dependency graph for event.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structevent}{event}
+\begin{DoxyCompactList}\small\item\em The structure representing an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{event_8h_a6c26e48f93f7a6b93f58da87cb7f499d}{typedef struct \hyperlink{structevent}{event} \hyperlink{event_8h_a6c26e48f93f7a6b93f58da87cb7f499d}{event}}\label{event_8h_a6c26e48f93f7a6b93f58da87cb7f499d}
+
+\begin{DoxyCompactList}\small\item\em An alias to the structure representing the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{event_8h_a6db4b3100e53e4c841becfe62661301d}{is\-\_\-valid} (\hyperlink{structevent}{event} $\ast$p\-\_\-my\-\_\-event, double time)
+\begin{DoxyCompactList}\small\item\em Test if an event is valid according to the definition of a valid event in the subject. \end{DoxyCompactList}\item 
+void \hyperlink{event_8h_a2db7bba8655ff32f1d5d31efec0b9b7b}{print\-\_\-particle} (\hyperlink{structparticle}{particle} $\ast$p\-\_\-particle)
+\begin{DoxyCompactList}\small\item\em Print the elements of a particle. \end{DoxyCompactList}\item 
+void \hyperlink{event_8h_a12873382563171982a7ecc3c63f26d5c}{print\-\_\-event} (\hyperlink{structevent}{event} $\ast$p\-\_\-event)
+\begin{DoxyCompactList}\small\item\em Print the elements of an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple definition of an event. \begin{DoxyAuthor}{Author}
+Gornet Mélanie
+\end{DoxyAuthor}
+This is a simple definition of an event 
+
+\subsection{Function Documentation}
+\hypertarget{event_8h_a6db4b3100e53e4c841becfe62661301d}{\index{event.\-h@{event.\-h}!is\-\_\-valid@{is\-\_\-valid}}
+\index{is\-\_\-valid@{is\-\_\-valid}!event.h@{event.\-h}}
+\subsubsection[{is\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-valid (
+\begin{DoxyParamCaption}
+\item[{{\bf event} $\ast$}]{p\-\_\-my\-\_\-event, }
+\item[{double}]{time}
+\end{DoxyParamCaption}
+)}}\label{event_8h_a6db4b3100e53e4c841becfe62661301d}
+
+
+Test if an event is valid according to the definition of a valid event in the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-my\-\_\-event} & a pointer to the event to consider \\
+\hline
+{\em time} & the time when the event is checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the evnt is valid, {\ttfamily false} else 
+\end{DoxyReturn}
+\hypertarget{event_8h_a12873382563171982a7ecc3c63f26d5c}{\index{event.\-h@{event.\-h}!print\-\_\-event@{print\-\_\-event}}
+\index{print\-\_\-event@{print\-\_\-event}!event.h@{event.\-h}}
+\subsubsection[{print\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf event} $\ast$}]{p\-\_\-event}
+\end{DoxyParamCaption}
+)}}\label{event_8h_a12873382563171982a7ecc3c63f26d5c}
+
+
+Print the elements of an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-event} & a pointer to the event to print \\
+\hline
+\end{DoxyParams}
+\hypertarget{event_8h_a2db7bba8655ff32f1d5d31efec0b9b7b}{\index{event.\-h@{event.\-h}!print\-\_\-particle@{print\-\_\-particle}}
+\index{print\-\_\-particle@{print\-\_\-particle}!event.h@{event.\-h}}
+\subsubsection[{print\-\_\-particle}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-particle (
+\begin{DoxyParamCaption}
+\item[{{\bf particle} $\ast$}]{p\-\_\-particle}
+\end{DoxyParamCaption}
+)}}\label{event_8h_a2db7bba8655ff32f1d5d31efec0b9b7b}
+
+
+Print the elements of a particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-particle} & a pointer to the particle to print \\
+\hline
+\end{DoxyParams}
