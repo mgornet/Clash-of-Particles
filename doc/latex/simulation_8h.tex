@@ -1,0 +1,103 @@
+\hypertarget{simulation_8h}{\section{include/simulation.h File Reference}
+\label{simulation_8h}\index{include/simulation.\-h@{include/simulation.\-h}}
+}
+
+
+Simulation of the clash of particles.  
+
+
+{\ttfamily \#include \char`\"{}heap.\-h\char`\"{}}\\*
+Include dependency graph for simulation.\-h\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{simulation_8h_a90d75a4e189f4a4364b2318b240d734f}{compute\-\_\-collisions} (\hyperlink{structheap}{heap} $\ast$p\-\_\-\-Q, \hyperlink{structparticle}{particle} $\ast$p\-\_\-particle, int nb\-\_\-particles, \hyperlink{structparticle}{particle} $\ast$cloud\mbox{[}nb\-\_\-particles\mbox{]}, double general\-\_\-time, \hyperlink{structparticle}{particle} $\ast$p\-\_\-exclu)
+\begin{DoxyCompactList}\small\item\em Compute all the events compatible with the particule. \end{DoxyCompactList}\item 
+void \hyperlink{simulation_8h_aa50a16d93250b3acd075c2199f99008b}{simulation} (int h, int nb\-\_\-particles)
+\begin{DoxyCompactList}\small\item\em Run the simulation. \end{DoxyCompactList}\item 
+\hyperlink{structparticle}{particle} $\ast$ \hyperlink{simulation_8h_a117d12422ca2f68c802526d004a0d793}{create\-\_\-particle} (int h, int k, int nb\-\_\-particles)
+\begin{DoxyCompactList}\small\item\em Initialise a particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulation of the clash of particles. \begin{DoxyAuthor}{Author}
+Gornet Mélanie
+\end{DoxyAuthor}
+This is a description of the simulation and the functions it contains 
+
+\subsection{Function Documentation}
+\hypertarget{simulation_8h_a90d75a4e189f4a4364b2318b240d734f}{\index{simulation.\-h@{simulation.\-h}!compute\-\_\-collisions@{compute\-\_\-collisions}}
+\index{compute\-\_\-collisions@{compute\-\_\-collisions}!simulation.h@{simulation.\-h}}
+\subsubsection[{compute\-\_\-collisions}]{\setlength{\rightskip}{0pt plus 5cm}void compute\-\_\-collisions (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-\-Q, }
+\item[{{\bf particle} $\ast$}]{p\-\_\-particle, }
+\item[{int}]{nb\-\_\-particles, }
+\item[{{\bf particle} $\ast$}]{cloud\mbox{[}nb\-\_\-particles\mbox{]}, }
+\item[{double}]{general\-\_\-time, }
+\item[{{\bf particle} $\ast$}]{p\-\_\-exclu}
+\end{DoxyParamCaption}
+)}}\label{simulation_8h_a90d75a4e189f4a4364b2318b240d734f}
+
+
+Compute all the events compatible with the particule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-\-Q} & a pointer to the heap you insert the node in \\
+\hline
+{\em p\-\_\-particle} & a pointer to the particle involved in the collisions \\
+\hline
+{\em nb\-\_\-particles} & an int representing the number of particles \\
+\hline
+{\em cloud} & a list of pointers to the other particles \\
+\hline
+{\em general\-\_\-time} & a float representing the time \\
+\hline
+{\em p\-\_\-exclu} & a pointer to the particle to exclude in case of a collision between two particles, {\ttfamily N\-U\-L\-L} otherwise \\
+\hline
+\end{DoxyParams}
+\hypertarget{simulation_8h_a117d12422ca2f68c802526d004a0d793}{\index{simulation.\-h@{simulation.\-h}!create\-\_\-particle@{create\-\_\-particle}}
+\index{create\-\_\-particle@{create\-\_\-particle}!simulation.h@{simulation.\-h}}
+\subsubsection[{create\-\_\-particle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf particle}$\ast$ create\-\_\-particle (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{k, }
+\item[{int}]{nb\-\_\-particles}
+\end{DoxyParamCaption}
+)}}\label{simulation_8h_a117d12422ca2f68c802526d004a0d793}
+
+
+Initialise a particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & equal to {\ttfamily 0} when executing a random generation of particles, {\ttfamily 1} when executing newton \\
+\hline
+{\em k} & the rank of the particle in the cloud \\
+\hline
+{\em nb\-\_\-particle} & the number of particles to generate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the particle created 
+\end{DoxyReturn}
+\hypertarget{simulation_8h_aa50a16d93250b3acd075c2199f99008b}{\index{simulation.\-h@{simulation.\-h}!simulation@{simulation}}
+\index{simulation@{simulation}!simulation.h@{simulation.\-h}}
+\subsubsection[{simulation}]{\setlength{\rightskip}{0pt plus 5cm}void simulation (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{nb\-\_\-particles}
+\end{DoxyParamCaption}
+)}}\label{simulation_8h_aa50a16d93250b3acd075c2199f99008b}
+
+
+Run the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & equal to {\ttfamily 0} when executing a random generation of particles, {\ttfamily 1} when executing newton \\
+\hline
+{\em nb\-\_\-particles} & an int representing the number of particles \\
+\hline
+\end{DoxyParams}

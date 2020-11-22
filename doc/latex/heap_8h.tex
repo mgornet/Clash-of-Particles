@@ -1,0 +1,262 @@
+\hypertarget{heap_8h}{\section{include/heap.h File Reference}
+\label{heap_8h}\index{include/heap.\-h@{include/heap.\-h}}
+}
+
+
+Simple definition of a binary heap containing {\ttfamily floats} values.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}event.\-h\char`\"{}}\\*
+Include dependency graph for heap.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structheap__node}{heap\-\_\-node}
+\begin{DoxyCompactList}\small\item\em The structure representing the nodes of the binary heap. \end{DoxyCompactList}\item 
+struct \hyperlink{structheap}{heap}
+\begin{DoxyCompactList}\small\item\em The structure representing the binary heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{heap_8h_a7494cf01097986538a32351765cb8abc}{typedef struct \hyperlink{structheap__node}{heap\-\_\-node} \hyperlink{heap_8h_a7494cf01097986538a32351765cb8abc}{heap\-\_\-node}}\label{heap_8h_a7494cf01097986538a32351765cb8abc}
+
+\begin{DoxyCompactList}\small\item\em An alias to the structure representing the nodes of the binary heap. \end{DoxyCompactList}\item 
+\hypertarget{heap_8h_aac5e897ea36c17c387126e1f38cbd4ed}{typedef struct \hyperlink{structheap}{heap} \hyperlink{heap_8h_aac5e897ea36c17c387126e1f38cbd4ed}{heap}}\label{heap_8h_aac5e897ea36c17c387126e1f38cbd4ed}
+
+\begin{DoxyCompactList}\small\item\em An alias to the structure representing a binary heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structheap}{heap} \hyperlink{heap_8h_a3c6cb799a9476d482cf42c427b43456a}{nil} ()
+\begin{DoxyCompactList}\small\item\em Create a nil binary heap. \end{DoxyCompactList}\item 
+bool \hyperlink{heap_8h_a0703078d412cb439f3606ec5b4bc5145}{is\-\_\-empty} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap)
+\begin{DoxyCompactList}\small\item\em Is the binary heap empty? \end{DoxyCompactList}\item 
+\hyperlink{structheap__node}{heap\-\_\-node} $\ast$ \hyperlink{heap_8h_a4a39551a6784b132c774eb0a4e860d63}{go\-\_\-to\-\_\-father\-\_\-node} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap, int n)
+\begin{DoxyCompactList}\small\item\em Gives a pointer to the heap node pointer representing the father of node number n in the heap. \end{DoxyCompactList}\item 
+void \hyperlink{heap_8h_af07606df657e97f441cc69c85f791499}{insert} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap, \hyperlink{structevent}{event} $\ast$p\-\_\-event)
+\begin{DoxyCompactList}\small\item\em Insert a new event in the binary heap. The worst-\/case execution time of this function is guaranteed to be in $\log n$ where $n$ is the size of the binary heap. \end{DoxyCompactList}\item 
+void \hyperlink{heap_8h_a4b121bfbbc7bd2f32cd11d5b67638dc9}{switch\-\_\-event} (\hyperlink{structheap__node}{heap\-\_\-node} $\ast$p\-\_\-1, \hyperlink{structheap__node}{heap\-\_\-node} $\ast$p\-\_\-2)
+\begin{DoxyCompactList}\small\item\em Switch two events placed in argument in the heap. \end{DoxyCompactList}\item 
+\hyperlink{structevent}{event} $\ast$ \hyperlink{heap_8h_ad705dd6a0b38fa174421924b7347f9d0}{extract\-\_\-min} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap)
+\begin{DoxyCompactList}\small\item\em Extract the event of the binary heap which time is minimum. The worst-\/case execution time of this function is guaranteed to be in $\log n$ where $n$ is the size of the binary heap. \end{DoxyCompactList}\item 
+void \hyperlink{heap_8h_ad2be78c36961c32f3009f15594472fc7}{print\-\_\-heap} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap)
+\begin{DoxyCompactList}\small\item\em Prints the binary heap. \end{DoxyCompactList}\item 
+void \hyperlink{heap_8h_a8f8a72ebe87738a977a0b3d5bf926cd4}{deallocate\-\_\-heap\-\_\-node} (\hyperlink{structheap__node}{heap\-\_\-node} $\ast$p\-\_\-node)
+\begin{DoxyCompactList}\small\item\em Deallocate the node. \end{DoxyCompactList}\item 
+void \hyperlink{heap_8h_a6ea5d0ef9d2114ab94c275a1654bc543}{deallocate\-\_\-heap} (\hyperlink{structheap}{heap} $\ast$p\-\_\-heap)
+\begin{DoxyCompactList}\small\item\em Deallocate the binary heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple definition of a binary heap containing {\ttfamily floats} values. \begin{DoxyAuthor}{Author}
+Gornet Mélanie
+\end{DoxyAuthor}
+This is a simple definition of a binary heap containing {\ttfamily floats} values implemented using a binary tree. Warning\-: the cells pointers should not be shared as deallocation of a B\-S\-T deallocates the memory space reserved for the cells!
+
+Inserting a value and extracting the minimum value are guaranteed to have a worst-\/case complexity in \$\-O( n)\$ where \$n\$ is the size of the heap.
+
+The A\-P\-I of the binary heap is defined as follows\-:
+
+
+\begin{DoxyItemize}
+\item a function to create an empty heap
+\item a function to check if the heap is empty
+\item a function to insert a new value in the heap
+\item a function to get the minimum value in the heap
+\item a function to print the binary heap
+\item a function to deallocate the binary heap 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{heap_8h_a6ea5d0ef9d2114ab94c275a1654bc543}{\index{heap.\-h@{heap.\-h}!deallocate\-\_\-heap@{deallocate\-\_\-heap}}
+\index{deallocate\-\_\-heap@{deallocate\-\_\-heap}!heap.h@{heap.\-h}}
+\subsubsection[{deallocate\-\_\-heap}]{\setlength{\rightskip}{0pt plus 5cm}void deallocate\-\_\-heap (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a6ea5d0ef9d2114ab94c275a1654bc543}
+
+
+Deallocate the binary heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the binary heap to be deallocated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+After the call, all memory regions used for the nodes are deallocated. 
+\end{DoxyPostcond}
+\hypertarget{heap_8h_a8f8a72ebe87738a977a0b3d5bf926cd4}{\index{heap.\-h@{heap.\-h}!deallocate\-\_\-heap\-\_\-node@{deallocate\-\_\-heap\-\_\-node}}
+\index{deallocate\-\_\-heap\-\_\-node@{deallocate\-\_\-heap\-\_\-node}!heap.h@{heap.\-h}}
+\subsubsection[{deallocate\-\_\-heap\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}void deallocate\-\_\-heap\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{{\bf heap\-\_\-node} $\ast$}]{p\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a8f8a72ebe87738a977a0b3d5bf926cd4}
+
+
+Deallocate the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-node} & a pointer to the node to be deallocated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-node} is not {\ttfamily N\-U\-L\-L} 
+\end{DoxyPrecond}
+\hypertarget{heap_8h_ad705dd6a0b38fa174421924b7347f9d0}{\index{heap.\-h@{heap.\-h}!extract\-\_\-min@{extract\-\_\-min}}
+\index{extract\-\_\-min@{extract\-\_\-min}!heap.h@{heap.\-h}}
+\subsubsection[{extract\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event}$\ast$ extract\-\_\-min (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_ad705dd6a0b38fa174421924b7347f9d0}
+
+
+Extract the event of the binary heap which time is minimum. The worst-\/case execution time of this function is guaranteed to be in $\log n$ where $n$ is the size of the binary heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the heap from which the event is to be extracted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the event of the binary heap which time is minimum
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L} and the binary heap is not empty 
+\end{DoxyPrecond}
+\hypertarget{heap_8h_a4a39551a6784b132c774eb0a4e860d63}{\index{heap.\-h@{heap.\-h}!go\-\_\-to\-\_\-father\-\_\-node@{go\-\_\-to\-\_\-father\-\_\-node}}
+\index{go\-\_\-to\-\_\-father\-\_\-node@{go\-\_\-to\-\_\-father\-\_\-node}!heap.h@{heap.\-h}}
+\subsubsection[{go\-\_\-to\-\_\-father\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf heap\-\_\-node}$\ast$ go\-\_\-to\-\_\-father\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a4a39551a6784b132c774eb0a4e860d63}
+
+
+Gives a pointer to the heap node pointer representing the father of node number n in the heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the heap \\
+\hline
+{\em n} & is the place of the node you want the father of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the father node of the n-\/node 
+\end{DoxyReturn}
+\hypertarget{heap_8h_af07606df657e97f441cc69c85f791499}{\index{heap.\-h@{heap.\-h}!insert@{insert}}
+\index{insert@{insert}!heap.h@{heap.\-h}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void insert (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap, }
+\item[{{\bf event} $\ast$}]{p\-\_\-event}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_af07606df657e97f441cc69c85f791499}
+
+
+Insert a new event in the binary heap. The worst-\/case execution time of this function is guaranteed to be in $\log n$ where $n$ is the size of the binary heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the heap in which the value is to be inserted \\
+\hline
+{\em p\-\_\-event} & a pointer to the event to be inserted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+After the call, {\ttfamily p\-\_\-heap} will point to a binary heap in which the event $\ast$p\-\_\-event has been inserted according to the algorithm presented in the lab session. 
+\end{DoxyPostcond}
+\hypertarget{heap_8h_a0703078d412cb439f3606ec5b4bc5145}{\index{heap.\-h@{heap.\-h}!is\-\_\-empty@{is\-\_\-empty}}
+\index{is\-\_\-empty@{is\-\_\-empty}!heap.h@{heap.\-h}}
+\subsubsection[{is\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-empty (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a0703078d412cb439f3606ec5b4bc5145}
+
+
+Is the binary heap empty? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the heap you want to check the emptiness\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} is {\ttfamily p\-\_\-heap} is empty, {\ttfamily false} else
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L} 
+\end{DoxyPrecond}
+\hypertarget{heap_8h_a3c6cb799a9476d482cf42c427b43456a}{\index{heap.\-h@{heap.\-h}!nil@{nil}}
+\index{nil@{nil}!heap.h@{heap.\-h}}
+\subsubsection[{nil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf heap} nil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a3c6cb799a9476d482cf42c427b43456a}
+
+
+Create a nil binary heap. 
+
+\begin{DoxyReturn}{Returns}
+a new empty binary heap 
+\end{DoxyReturn}
+\hypertarget{heap_8h_ad2be78c36961c32f3009f15594472fc7}{\index{heap.\-h@{heap.\-h}!print\-\_\-heap@{print\-\_\-heap}}
+\index{print\-\_\-heap@{print\-\_\-heap}!heap.h@{heap.\-h}}
+\subsubsection[{print\-\_\-heap}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-heap (
+\begin{DoxyParamCaption}
+\item[{{\bf heap} $\ast$}]{p\-\_\-heap}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_ad2be78c36961c32f3009f15594472fc7}
+
+
+Prints the binary heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-heap} & a pointer to the binary heap to be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily p\-\_\-heap} is not {\ttfamily N\-U\-L\-L}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+After the call, the binary heap is printed. 
+\end{DoxyPostcond}
+\hypertarget{heap_8h_a4b121bfbbc7bd2f32cd11d5b67638dc9}{\index{heap.\-h@{heap.\-h}!switch\-\_\-event@{switch\-\_\-event}}
+\index{switch\-\_\-event@{switch\-\_\-event}!heap.h@{heap.\-h}}
+\subsubsection[{switch\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void switch\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf heap\-\_\-node} $\ast$}]{p\-\_\-1, }
+\item[{{\bf heap\-\_\-node} $\ast$}]{p\-\_\-2}
+\end{DoxyParamCaption}
+)}}\label{heap_8h_a4b121bfbbc7bd2f32cd11d5b67638dc9}
+
+
+Switch two events placed in argument in the heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-1} & a pointer to the first node to switch \\
+\hline
+{\em p\-\_\-2} & a pointer to the second node to switch \\
+\hline
+\end{DoxyParams}
